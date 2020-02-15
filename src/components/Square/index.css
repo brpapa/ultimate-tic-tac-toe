@@ -1,0 +1,27 @@
+button.square {
+  color: black;
+  background-color: #fff;
+  border: 1px solid #bbb;
+
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  height: var(--square-size);
+  width: var(--square-size);
+}
+button.square:focus {
+  outline: none;
+}
+
+button.square:hover {
+  cursor: pointer;
+  background-color: #0000000e;
+}
+button.square:disabled {
+  opacity: 1;
+  cursor: default;
+  background-color: white;
+}

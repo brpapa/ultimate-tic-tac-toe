@@ -1,0 +1,19 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100vw;
+  font: 15px 'Helvetica', Futura, sans-serif;
+
+  --square-size: 65px; /*! mudanças tbm precisariam ser feitas nas fontes */
+}
+
+h1, p {
+  text-align: center;
+}
+
+.game-line {
+  display: flex;
+}
