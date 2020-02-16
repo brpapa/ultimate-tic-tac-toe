@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.css'
+import './styles.css'
 
 export default function Square({ value, disabled, onClick }) {
   return (

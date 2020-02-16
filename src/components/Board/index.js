@@ -1,6 +1,6 @@
 import React from 'react'
 import Square from '../Square'
-import './index.css'
+import './styles.css'
 
 export default class Board extends React.Component {
   constructor(props) {
@@ -16,21 +16,15 @@ export default class Board extends React.Component {
     return (
       <div className='board-container'>
         <div className='board-line'>
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
+          {[0, 1, 2].map((s) => this.renderSquare(s))}
         </div>
         <div className='board-line'>
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
+          {[3, 4, 5].map((s) => this.renderSquare(s))}
         </div>
         <div className='board-line'>
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
+          {[6, 7, 8].map((s) => this.renderSquare(s))}
         </div>
-        {(winner || blocked) ? (
+        {(winner || blocked)? (
           <button className='square-9' disabled={true}>
             {winner}
           </button>
@@ -41,10 +35,11 @@ export default class Board extends React.Component {
 
   renderSquare(s) {
     const { winner, squares } = this.state
+
     return (
       <Square
         value={squares[s]}
-        disabled={winner || squares[s]}
+        disabled={squares[s] || winner}
         onClick={() => {
           this.handleClickOnSquare(s) // quando Square for clicado, ele 'informa' Board, portanto Square é um controlled component
         }}
@@ -53,12 +48,12 @@ export default class Board extends React.Component {
   }
 
   handleClickOnSquare(s) {
-    this.setState((state) => {
+    this.setState((state, props) => {
       const squares = state.squares.slice() // copia os valores para garantir a imutabilidade
-      squares[s] = this.props.currPlayer
+      squares[s] = props.currPlayer
 
       // define novo currPlayer em Game e checa se squares é vencedor
-      this.props.onClick(squares, s)
+      props.onClick(squares, s)
 
       return { squares }
     })

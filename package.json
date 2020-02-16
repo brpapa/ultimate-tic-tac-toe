@@ -2,6 +2,8 @@
   "name": "ultimate-tic-tac-toe",
   "homepage": "https://brnpapa.github.io/ultimate-tic-tac-toe",
   "version": "0.1.0",
+  "main": "src/index.js",
+  "license": "MIT",
   "private": false,
   "dependencies": {
     "react": "^16.12.0",

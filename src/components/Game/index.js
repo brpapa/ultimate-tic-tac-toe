@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Board from '../Board'
-import './index.css'
+import './styles.css'
 
 // 1 Game  -> 9 Board
 // 1 Board -> 9 Square
@@ -26,19 +26,13 @@ export default class Game extends React.Component {
         <p>{winner ? `${winner} won!` : `${currPlayer}'s turn`}</p>
         <div className='game-container'>
           <div className='game-line'>
-            {this.renderBoard(0)}
-            {this.renderBoard(1)}
-            {this.renderBoard(2)}
+            {[0, 1, 2].map((b) => this.renderBoard(b))}
           </div>
           <div className='game-line'>
-            {this.renderBoard(3)}
-            {this.renderBoard(4)}
-            {this.renderBoard(5)}
+            {[3, 4, 5].map((b) => this.renderBoard(b))}
           </div>
           <div className='game-line'>
-            {this.renderBoard(6)}
-            {this.renderBoard(7)}
-            {this.renderBoard(8)}
+            {[6, 7, 8].map((b) => this.renderBoard(b))}
           </div>
         </div>
       </div>
@@ -46,7 +40,7 @@ export default class Game extends React.Component {
   }
 
   renderBoard(b) {
-    const { currPlayer, boards, boardFree, winner} = this.state
+    const { currPlayer, boards, boardFree, winner } = this.state
 
     return (
       <Board
@@ -90,7 +84,12 @@ export default class Game extends React.Component {
     for (let possibility of possibilities) {
       const [a, b, c] = possibility
       const square = squares[a]
-      if (square && square !== '#' && square === squares[b] && square === squares[c])
+      if (
+        square &&
+        square !== '#' &&
+        square === squares[b] &&
+        square === squares[c]
+      )
         return square
     }
     if (squares.every((s) => s != null)) return '#'
