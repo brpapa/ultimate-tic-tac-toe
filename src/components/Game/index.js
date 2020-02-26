@@ -22,7 +22,6 @@ export default class Game extends React.Component {
     const { winner, currPlayer } = this.state
     return (
       <div>
-        <h1>tic tac toe²</h1>
         <p>{winner ? `${winner} won!` : `${currPlayer}'s turn`}</p>
         <div className='game-container'>
           <div className='game-line'>
