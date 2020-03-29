@@ -1,4 +1,4 @@
-/* TODO: tornar responsivo */
+/* TODO: tornar responsivo, mas antes migrar tudo usando styled-components */
 
 #root {
   display: flex;
@@ -10,12 +10,4 @@
   font: 15px 'Helvetica', Futura, sans-serif;
 
   --square-size: 65px; /* FIXME: qualquer mudança aqui requer mudanças nas fontes */
-}
-
-h1, p {
-  text-align: center;
-}
-
-.game-line {
-  display: flex;
 }
