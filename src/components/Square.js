@@ -15,8 +15,9 @@ const Button = styled('button')`
   border: 1px solid #bbb;
 
   text-align: center;
-  font-size: 42px;
+  font-size: 42px; /* TODO: unidade relativa */
   font-weight: 700;
+
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
