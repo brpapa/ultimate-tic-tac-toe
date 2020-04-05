@@ -29,7 +29,7 @@ export default function Game(props) {
         currPlayer={currPlayer}
         onClick={(squares, s) => handleClickOnBoard(b, squares, s)}
         winner={boards[b]}
-        blocked={(b !== unlockedBoard && unlockedBoard !== null) || winner}
+        blocked={(b !== unlockedBoard && unlockedBoard !== null)}
       />
     )
   }

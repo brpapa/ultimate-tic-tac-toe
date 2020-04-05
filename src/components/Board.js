@@ -12,7 +12,7 @@ export default function Board({ winner, blocked, currPlayer, onClick }) {
       <Row>{[0, 1, 2].map((s) => renderSquare(s))}</Row>
       <Row>{[3, 4, 5].map((s) => renderSquare(s))}</Row>
       <Row>{[6, 7, 8].map((s) => renderSquare(s))}</Row>
-      {blocked ? <OverlayedContainer winner={winner}>{winner}</OverlayedContainer> : null}
+      {blocked || winner? <OverlayedContainer winner={winner}>{winner}</OverlayedContainer> : null}
     </Container>
   )
 
